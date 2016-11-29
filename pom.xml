@@ -1,12 +1,99 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
     <groupId>com.cncounter</groupId>
     <artifactId>druid-web-helper</artifactId>
     <version>0.1-SNAPSHOT</version>
 
+    <packaging>jar</packaging>
+    <name>druid-web-helper</name>
+    <description>druid JDBC datasource stat Cluster Helper</description>
+    <url>https://github.com/cncounter/druid-web-helper</url>
+    <inceptionYear>2016</inceptionYear>
 
+    <properties>
+        <druid.version>1.0.27</druid.version>
+        <fastjson.version>1.2.21</fastjson.version>
+        <junit.version>4.12</junit.version>
+        <servlet-api.version>3.1.0</servlet-api.version>
+
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <developers>
+        <developer>
+            <id>tiemao</id>
+            <name>tiemao</name>
+            <email>renfufei@qq.com</email>
+        </developer>
+    </developers>
+
+    <scm>
+        <url>https://renfufei@github.com/cncounter/druid-web-helper.git</url>
+        <connection>scm:git:https://renfufei@github.com/cncounter/druid-web-helper.git</connection>
+    </scm>
+
+    <organization>
+        <name>CNCounter Group</name>
+        <url>https://github.com/cncounter</url>
+    </organization>
+
+    <licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+            <comments>A business-friendly OSS license</comments>
+        </license>
+    </licenses>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+            <version>${druid.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>${fastjson.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>${servlet-api.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpcore</artifactId>
+            <version>4.4.4</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>4.3.1</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>commons-logging</artifactId>
+                    <groupId>commons-logging</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <finalName>druid-web-helper</finalName>
+    </build>
 </project>
