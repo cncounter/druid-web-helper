@@ -277,6 +277,7 @@ public class WebAppStatMergeHandler implements DruidStatMergeHandlerAPI {
                     int sum = intV + intVTemp;
                     array.set(i, sum);
                 }
+                result.put(key, array);
                 continue;
             }
             // 直接设置值? 忽略?
