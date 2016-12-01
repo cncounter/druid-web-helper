@@ -217,7 +217,7 @@ public class SqlStatMergeHandler implements DruidStatMergeHandlerAPI {
             if(sumArrayFieldNames.contains(key)){
                 // 获取Array
                 JSONArray array = result.getJSONArray(key);
-                JSONArray arrayTemp = result.getJSONArray(key);
+                JSONArray arrayTemp = temp.getJSONArray(key);
                 //
                 int minSize = Math.min(array.size(), arrayTemp.size());
                 for(int i=0; i<minSize; i++){
