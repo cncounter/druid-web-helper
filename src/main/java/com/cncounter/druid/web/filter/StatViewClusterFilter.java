@@ -21,6 +21,10 @@ import com.alibaba.druid.support.logging.LogFactory;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.cncounter.druid.web.handler.DruidStatMergeHandlerAPI;
+import com.cncounter.druid.web.handler.impl.ResetAllStatMergeHandler;
+import com.cncounter.druid.web.handler.impl.SqlStatMergeHandler;
+import com.cncounter.druid.web.handler.impl.WebAppStatMergeHandler;
+import com.cncounter.druid.web.handler.impl.WebUriStatMergeHandler;
 import com.cncounter.druid.web.util.HttpProxyUtil;
 
 import javax.servlet.*;
@@ -51,6 +55,7 @@ public class StatViewClusterFilter implements Filter {
     // 节点名称,用来设置 HTTP_HEADER_NAME_STAT_PROCESSED; 判断是否是本机
     public String STAT_NODE_NAME = UUID.randomUUID().toString().toLowerCase().replace("-", "");
     public String druidServletPath = "/druid";
+    public Set<String> mergeHandlerClassNames = new HashSet<String>();
     public Map<String, DruidStatMergeHandlerAPI> mergeHandlerMapping = new ConcurrentHashMap<String, DruidStatMergeHandlerAPI>();
     private List<String> clusterList = new ArrayList<String>();
 
@@ -305,6 +310,18 @@ public class StatViewClusterFilter implements Filter {
                 }
             }
         }
+    }
+
+    // 获取内置的 Handler； 可以由客户自定义配置给覆盖.
+    public Set<String> getBuiltInHandlerNames(){
+        Set<String> classNames = new HashSet<String>();
+        //
+        classNames.add(ResetAllStatMergeHandler.class.getName());
+        classNames.add(SqlStatMergeHandler.class.getName());
+        classNames.add(WebAppStatMergeHandler.class.getName());
+        classNames.add(WebUriStatMergeHandler.class.getName());
+        //
+        return classNames;
     }
 
     @Override
