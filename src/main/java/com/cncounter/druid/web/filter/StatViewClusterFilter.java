@@ -146,7 +146,7 @@ public class StatViewClusterFilter implements Filter {
 
         /**
          * 示例:
-         http://dev.exam.yiboshi.com/manage/druid/weburi.json?orderBy=URI&orderType=desc&page=1&perPageCount=1000000&
+         http://dev.exam.aliyun.com/manage/druid/weburi.json?orderBy=URI&orderType=desc&page=1&perPageCount=1000000&
          */
 
         // 请求资源URI
