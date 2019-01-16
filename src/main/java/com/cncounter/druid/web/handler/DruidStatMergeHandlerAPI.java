@@ -10,10 +10,10 @@ import java.util.List;
 public interface DruidStatMergeHandlerAPI {
 
     /**
-     * 可以处理的URI
+     * 可以处理的URI-模式列表
      * @return
      */
-    public String canProcessUri();
+    public List<String> canProcessUriPatterns();
     /**
      * 合并结果
      * @param multiResponse 请求得到的多个结果

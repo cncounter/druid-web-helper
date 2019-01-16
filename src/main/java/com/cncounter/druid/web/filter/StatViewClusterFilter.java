@@ -66,7 +66,7 @@ public class StatViewClusterFilter implements Filter {
         HttpServletResponse httpResponse = (HttpServletResponse) response;
 
         errorTip.remove();
-        // 放过
+        // 返回 true,则表示已经处理,直接放过
         if (isProcessed(httpRequest)) {
             chain.doFilter(request, response);
             return;

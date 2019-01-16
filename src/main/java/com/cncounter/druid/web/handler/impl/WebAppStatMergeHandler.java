@@ -4,10 +4,7 @@ import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.cncounter.druid.web.handler.DruidStatMergeHandlerAPI;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 /**
  * webapp.json 解析处理器
@@ -23,8 +20,8 @@ public class WebAppStatMergeHandler implements DruidStatMergeHandlerAPI {
     private Set<String> sumArrayFieldNames = getSumArrayFieldNames();
 
     private String canProcessUriStr = "/webapp.json";
-    public String canProcessUri() {
-        return canProcessUriStr;
+    public List<String> canProcessUriPatterns() {
+        return Collections.singletonList(canProcessUriStr);
     }
     //
     public String getKeyFieldName(){

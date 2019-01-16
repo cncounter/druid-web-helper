@@ -12,8 +12,8 @@
     <inceptionYear>2016</inceptionYear>
 
     <properties>
-        <druid.version>1.0.27</druid.version>
-        <fastjson.version>1.2.21</fastjson.version>
+        <druid.version>1.1.12</druid.version>
+        <fastjson.version>1.2.54</fastjson.version>
         <spring.version>4.2.5.RELEASE</spring.version>
         <junit.version>4.12</junit.version>
         <servlet-api.version>3.1.0</servlet-api.version>

@@ -3,6 +3,8 @@ package com.cncounter.druid.web.handler.impl;
 import com.alibaba.fastjson.JSONObject;
 import com.cncounter.druid.web.handler.DruidStatMergeHandlerAPI;
 
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -13,8 +15,8 @@ public class ResetAllStatMergeHandler implements DruidStatMergeHandlerAPI {
     public final Integer ONE = 1;
 
     private String canProcessUriStr = "/reset-all.json";
-    public String canProcessUri() {
-        return canProcessUriStr;
+    public List<String> canProcessUriPatterns() {
+        return Collections.singletonList(canProcessUriStr);
     }
     /**
      * 合并结果

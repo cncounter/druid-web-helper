@@ -40,9 +40,7 @@ public class HttpProxyUtil {
      * @param servletRequest
      * @param targetUri
      * @return
-     * @throws ServletException
-     * @throws IOException
-     * @throws URISyntaxException
+     * @throws Exception
      */
     public static String proxy(HttpServletRequest servletRequest, String targetUri)
             throws Exception {
